@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [menu, setMenu] = useState(false);
+
+  const handleMenu = () => {
+    setMenu(!menu);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`App ${menu ? 'active' : 'not-active'}`}>
+      <ul>
+        <li>Home</li>
+        <li>About Us</li>
+        <li>Contact Us</li>
+        <li>More</li>
+      </ul>
+      <div className="hamburger" onClick={handleMenu}>
+        <div className="burger "></div>
+        <div className="burger"></div>
+        <div className="burger"></div>
+      </div>
     </div>
   );
 }
