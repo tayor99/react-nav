@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import logo from './Image/logo.png';
 import './App.css';
 
 function App() {
@@ -8,19 +9,39 @@ function App() {
     setMenu(!menu);
   };
 
+  const newClass = menu ? 'hamLink' : '';
+
+  console.log(newClass);
+
+  console.log(menu);
+
   return (
     <div className={`App ${menu ? 'active' : 'not-active'}`}>
-      <ul>
-        <li>Home</li>
-        <li>About Us</li>
-        <li>Contact Us</li>
-        <li>More</li>
-      </ul>
-      <div className="hamburger" onClick={handleMenu}>
-        <div className="burger "></div>
-        <div className="burger"></div>
-        <div className="burger"></div>
+      <div className="logo">
+        <img src={logo} alt="logo png" />
       </div>
+      <div
+        className={`hamburger ${menu ? 'open' : 'close'}`}
+        onClick={handleMenu}
+      >
+        <div className="burger burger1"></div>
+        <div className="burger burger2"></div>
+        <div className="burger burger3"></div>
+      </div>
+      <ul className={newClass}>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="#about">About Us</a>
+        </li>
+        <li>
+          <a href="#contact">Contact Us</a>
+        </li>
+        <li>
+          <a href="#more">More</a>
+        </li>
+      </ul>
     </div>
   );
 }
