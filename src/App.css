@@ -69,7 +69,8 @@ li {
   border-radius: 10px;
   background-color: black;
   transform-origin: 1px;
-  transition: all 0.3s linear;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
 }
 
 .open .burger {
@@ -78,7 +79,8 @@ li {
   color: '#ccc';
   border-radius: 10px;
   transform-origin: 1px;
-  transition: all 0.3s linear;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
   cursor: pointer;
 }
 
